@@ -1,0 +1,43 @@
+.product_card_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  
+  .card {
+    flex: 0 0 calc(25% - 1rem); 
+    margin-bottom: 1rem;
+    padding-left: 32px;
+    padding-right: 32px;
+    
+  }
+  
+  #productImageCarousel {
+    padding-right: 30px;
+    gap: 32px;
+    margin-top: 50px;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 5rem;
+  }
+
+  .card-manufacturer {
+    font-size: 1rem;
+  }
+  
+
+  .card-price {
+    font-size: 1.5rem;
+  }
+  
+ 
+
