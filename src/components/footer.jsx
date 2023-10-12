@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ContactModal from './ContactModal';
-import InfoModal from './InfoModal';
-import RessourcenModal from './RessourcenModal'
+import ContactModal from './modals/ContactModal';
+import InfoModal from './modals/InfoModal';
+import RessourcenModal from './modals/RessourcenModal'
 
 class Footer extends Component {
   state = {
     infoModalOpen: false,
+    ressourcenModalOpen: false,
     contactModalOpen: false,
   };
 
@@ -48,10 +49,10 @@ class Footer extends Component {
                 <a href="#" className="mr-4 hover:underline md:mr-6 text-white hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openInfoModal(); }}>Info</a>
               </li>
               <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6 text-white hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openRessourcenModal(); }}>Ressourcen</a>
+              <a href="#" className="mr-4 hover:underline md:mr-6 text-white hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openRessourcenModal(); }}>Ressources</a>
               </li>
               <li>
-                <a href="#" className="mr-4 hover:underline md:mr-6 text-white hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openContactModal(); }}>Kontakt</a>
+                <a href="#" className="mr-4 hover:underline md:mr-6 text-white hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openContactModal(); }}>Contact</a>
               </li>
             </ul>
           </div>

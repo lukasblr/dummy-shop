@@ -35,7 +35,7 @@ function Navbar({ onSearch }) {
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="white">
               <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
             </svg>
-            <span style={{ marginLeft: '0px' }}>Start</span>
+            <span style={{ marginLeft: '0px' }}>Home</span>
           </Link>
         )}
       </div>
@@ -43,7 +43,7 @@ function Navbar({ onSearch }) {
         <div className="input-group relative">
           <input
             className="input input-bordered w-24 md:w-auto pl-10 rounded-r-lg" // Fügen Sie rounded-r-lg hinzu, um das Suchfeld auf der rechten Seite abzurunden
-            style={{ color: 'white', borderRadius: '0.375rem 0.375rem 0.375rem 0.375rem' }} // Hier wird das rechte Ende des Eingabefelds manuell abgerundet
+            style={{ color: 'black', borderRadius: '0.375rem 0.375rem 0.375rem 0.375rem' }} // Hier wird das rechte Ende des Eingabefelds manuell abgerundet
             type="text"
             name="search"
             placeholder="Suchen..."

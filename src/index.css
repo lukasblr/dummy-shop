@@ -63,7 +63,24 @@ body {
   font-family: 'DIN PRO', sans-serif; 
 }
 
+.discount-bubble {
+  background-color: #e93c07; /* Hintergrundfarbe der Blase anpassen */
+  color: #fff; /* Textfarbe der Blase anpassen */
+  border-radius: 10%; /* Abrundung für eine runde Blase */
+  width: 60px; /* Breite der Blase anpassen */
+  height: 40px; /* Höhe der Blase anpassen */
+  display: flex;
+  margin-left: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px; /* Abstand zum darüberliegenden Element anpassen */
+}
 
-
-
+.pagination {
+  
+  justify-content: center;
+  
+ 
+  
+}
 

@@ -4,13 +4,23 @@ This website was created as part of a portfolio exam in the lecture "Webprogramm
 
 ## Allgemeine Informationen
 
-Name: Lukas Blarr
+Lukas Blarr
 
 Dual Student Business Informatics (Software-Engineering)
 
 DHBW Karlsruhe
 
 blarr.lukas.a22@student.dhbw-karlsruhe.de
+
+## Komponenten & Frameworks
+
+React (JavaScript)
+
+Bootstrap
+
+Tailwind CSS
+
+Flowbite
 
 ## Installation
 The following are the installation steps to get the project running properly.
