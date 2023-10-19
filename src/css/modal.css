@@ -1,0 +1,23 @@
+#modal_title {
+  font-weight: bold;
+  font-family: DIN PRO;
+}
+
+  .modal_text {
+    font-family: DIN PRO;
+  }
+  
+  #modal_button {
+    background-color: white !important;
+    color: black !important;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  #modal_button:hover {
+    background-color: black !important;
+    color: white !important;
+  }
+  

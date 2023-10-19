@@ -1,0 +1,44 @@
+.header {
+  margin-left: 1rem; 
+  margin-bottom: 0rem;
+  font-family: 'DIN PRO';
+  font-size: 2rem; 
+}
+
+#main_header {
+  padding-bottom: 0.5rem; 
+  padding-left: 16px; 
+  font-family: 'DIN PRO';
+  font-size: 2rem; 
+  font-weight: bold;
+  margin-bottom: 0;
+  color: black;
+}
+
+#sub_header {
+  padding-bottom: 0.25rem; 
+  padding-left: 16px; 
+  font-family: 'DIN PRO';
+  font-size: 1rem; 
+  font-weight: normal;
+  color: gray;
+}
+
+@media (min-width: 769px) {
+  .header {
+    margin-left: 2rem; 
+    font-size: 4rem; 
+  }
+
+  #main_header {
+    padding-bottom: 1rem; 
+    padding-left: 32px; 
+    font-size: 4rem; 
+  }
+
+  #sub_header {
+    padding-bottom: 0.5rem; 
+    padding-left: 32px; 
+    font-size: 1.5rem; 
+  }
+}

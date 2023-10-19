@@ -33,35 +33,21 @@ export default function ContactModal({ isOpen, closeModal }) {
           <div className="relative w-full max-w-md max-h-full">
             <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
               <div className="flex flex-col p-5 dark:border-gray-600">
-                <h2 className="text-xl font-medium text-gray-900 dark:text-white" style={{fontWeight: 'bold'}}>
+                <h2 className="text-xl font-medium text-gray-900 dark:text-white" id="modal_title">
                   Contact
                 </h2>
-                 <div className='din-pro'>
+                 <div className="modal_text">
                     Lukas Blarr<br />
                     Dual Student Business Informatics <br />
                     DHBW Karlsruhe<br />
                     <a href="mailto:blarr.lukas.a22@student.dhbw-karlsruhe.de">blarr.lukas.a22@student.dhbw-karlsruhe.de</a>
                   </div>
-                <button
-  type="button"
-  className="mt-4 inline-flex justify-center rounded-md border border-transparent bg-green-100 text-black px-1 py-1 text-sm font-medium hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
-  style={{ fontWeight: 'bold', marginLeft: '4rem', marginRight: '4rem' }}
-  onClick={closeModal}
->
-  Okay
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
+                  <button type="button" className="mt-4 inline-flex justify-center 
+                    rounded-md border border-transparent bg-black text-white px-1 py-1 text-sm 
+                    font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
+                    focus-visible:ring-black-500 focus-visible:ring-offset-2" id="modal_button" 
+                    onClick={closeModal}>Okay
+                  </button>
               </div>
             </div>
           </div>

@@ -1,0 +1,66 @@
+#navbar {
+  margin-bottom: 10px; 
+  font-family: 'DIN PRO';
+}
+
+#navbar_icon {
+  width: 38px; 
+  height: 32px; 
+  margin-right: 0.2rem; 
+}
+
+#navbar_icontext {
+  font-weight: bold; 
+  padding-right: 1rem; 
+}
+
+.error_message {
+  color: red;
+  margin: 5px; 
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+#search_field {
+  padding: 16px; 
+  height: 40px; 
+  width: 60%; 
+  margin-left: auto; 
+}
+
+@media (min-width: 769px) {
+  #navbar {
+    margin-bottom: 20px; 
+  }
+
+  #navbar_icon {
+    width: 42px;
+    height: 38px; 
+     
+  }
+
+  #navbar_icontext {
+    font-weight: bold; 
+  }
+
+  .error_message {
+    margin: 10px; 
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+  }
+
+  #search_field {
+    padding: 20px; 
+    height: 30px; 
+    width: 70%; 
+    margin-left: auto; 
+  }
+}

@@ -1,0 +1,35 @@
+.footer-container {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999; 
+  background-color: #fff;
+}
+
+#footer_logo {
+  width: 42px; 
+  height: 38px; 
+  margin-right: 2px; 
+}
+
+#footer_logotext {
+  font-family: 'DIN PRO'; 
+  font-weight: bold;
+}
+
+@media (min-width: 769px) {
+  #footer_logo {
+    width: 64px; 
+    height: 58px; 
+  }
+
+  #footer_logotext {
+    font-size: 30px;
+  }
+}

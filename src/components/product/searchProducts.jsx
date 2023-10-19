@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Product from './product';
+import Box from '@mui/joy/Box';
+import Alert from '@mui/joy/Alert';
 
 class SearchProducts extends Component {
   state = {
@@ -15,23 +17,24 @@ class SearchProducts extends Component {
 
   fetchProductsData() {
     const { searchQuery } = this.props;
-    const { currentPage, productsPerPage } = this.state;
     let apiUrl = `https://dummyjson.com/products/search?q=${searchQuery}&limit=100`;
 
     fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok for searchQuery: ${searchQuery}`);
-        }
-        return response.json();
-      })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Network response was not ok for searchQuery: ${searchQuery}`);
+    }
+    return response.json();
+  })
       .then((data) => {
         if (data.products.length === 0) {
           this.setState({
             products: [],
             error: (
-              <div>
-                Keine Produkte gefunden für "{searchQuery}"
+              <div id="noproducts_error">
+                <Box id="noproducts_errorbox">
+                  <Alert variant="soft" color="danger" size="md">No products found for "{searchQuery}"</Alert>
+                </Box>
               </div>
             ),
           });
@@ -53,31 +56,33 @@ class SearchProducts extends Component {
   }
 
   render() {
-    const { products, error, currentPage, productsPerPage } = this.state;
-
-    // Berechnung des Indexbereichs für die anzuzeigenden Produkte
+    const { products, currentPage, productsPerPage } = this.state;
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
-    const renderProducts = currentProducts.map((product) => (
-      <Product key={product.id} product={product} />
-    ));
-
+  
+    // Count of search results
+    const searchResultCount = products.length;
+    const isAllProducts = searchResultCount === 100;
+  
     return (
       <div>
-        {error ? (
-          <div>
-            {error}
+        <div className="search-result-message">
+          <div className="rounded-frame">
+            {isAllProducts ? "Our Products" : `Search Results for "${this.props.searchQuery}"`}
+            <div className="result-count">
+              {isAllProducts ? "" : `${searchResultCount} Results`}
+            </div>
           </div>
-        ) : (
-          <div className="product_card_container">
-            {renderProducts}
-          </div>
-        )}
+        </div>
+        <div className="product_card_container">
+          {currentProducts.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </div>
         <div className="pagination">
           <div className="pagination-center">
-            {Array.from({ length: Math.ceil(products.length / productsPerPage) }, (_, index) => (
+            {Array.from({ length: Math.ceil(searchResultCount / productsPerPage) }, (_, index) => (
               <button
                 className={`join-item btn custom-button ${index + 1 === currentPage ? 'btn-active' : ''}`}
                 key={index}
@@ -90,6 +95,9 @@ class SearchProducts extends Component {
         </div>
       </div>
     );
+    
+    
+    
   }
 }
 

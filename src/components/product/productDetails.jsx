@@ -3,23 +3,17 @@ import { useParams } from 'react-router-dom';
 import Rating from 'react-rating-stars-component';
 import { AspectRatio } from '../AspectRatio';
 import ShoppingcartModal from '../modals/shoppingcartModal';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../Accordion";
-
-
-
+import Product from './product';
 
 function ProductDetails() {
   const { productId } = useParams();
   const [productData, setProductData] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [similarProducts, setSimilarProducts] = useState([]);
 
   useEffect(() => {
+    // Lade Produktinformationen
     fetch(`https://dummyjson.com/products/${productId}`)
       .then((response) => response.json())
       .then((data) => setProductData(data))
@@ -28,16 +22,15 @@ function ProductDetails() {
       });
   }, [productId]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? productData.images.length - 1 : prevIndex - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === productData.images.length - 1 ? 0 : prevIndex + 1));
-  };
+  useEffect(() => {
+    // Laden von ähnlichen Produkten derselben Kategorie
+    if (productData) {
+      fetchSimilarProducts(productData.category).then((data) => setSimilarProducts(data));
+    }
+  }, [productData]);
 
   if (!productData) {
-    return <div className="loading" style={{ textAlign: 'center' }}><span className="loading loading-spinner text-neutral"></span></div>;
+    return <div className="loading"><span className="loading loading-spinner text-neutral"></span></div>;
   }
 
   const roundRating = (rating) => {
@@ -51,14 +44,14 @@ function ProductDetails() {
     if (stock > 0) {
       circleClass += ' green';
       return (
-        <p style={{ margin: '0' }}>
+        <p>
           <span className={circleClass}></span> immediately available
         </p>
       );
     } else {
       circleClass += ' red';
       return (
-        <p style={{ margin: '0' }}>
+        <p>
           <span className={circleClass}></span> not available
         </p>
       );
@@ -67,9 +60,9 @@ function ProductDetails() {
 
   return (
     <div className="product-details-container flex">
-      <div className="relative" style={{ width: '800px', height: '800px', paddingLeft: '5rem' }}>
+      <div className="relative" id="gallery_container">
         <div className="relative h-full overflow-hidden rounded-lg md:h-full">
-          <div className="grid gap-4" style={{ width: '600px', height: '600px' }}>
+          <div className="grid gap-4" id="gallery">
             <div>
               <AspectRatio ratio={1 / 1}>
                 <img
@@ -79,7 +72,7 @@ function ProductDetails() {
                 />
               </AspectRatio>
             </div>
-            <div className="grid grid-cols-5 gap-4" style={{ marginBottom: '8rem' }}>
+            <div className="grid grid-cols-5 gap-4" >
               {productData.images.map((image, index) => (
                 <div key={index}>
                   <AspectRatio ratio={1 / 1}>
@@ -96,11 +89,11 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="product-details w-1/2 p-4" style={{ height: '100%' }}>
-        <p>{productData.brand}</p>
-        <p className="product_title" style={{ fontSize: '32pt', fontWeight: 'bold', margin: '0' }}>{productData.title}</p>
-        <p style={{ margin: '0' }}>{productData.category}</p>
-        <div className="rating" style={{ display: 'flex' }}>
+      <div className="product-details w-1/2 p-4">
+        <p className="product_brand">{productData.brand}</p>
+        <p className="product_title">{productData.title}</p>
+        <p className="product_category">{productData.category}</p>
+        <div className="rating">
           <Rating
             count={5}
             value={parseFloat(roundedRating)}
@@ -108,61 +101,46 @@ function ProductDetails() {
             edit={false}
             isHalf={true}
           />
-          <p className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400" style={{ fontWeight: 'bold', marginTop: '10px' }}>
+          <p className="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400" id="rating_text">
             {productData.rating} / 5.0
           </p>
         </div>
-        <p style={{ marginBottom: '1rem' }}>{productData.description}</p>
-        <div className="price_lieferbar" style={{ display: 'flex' }}>
-          <div className="price_lieferbar">
-            <div className="stat-title" style={{ textDecoration: 'line-through', color: 'black' }}>{(productData.price / (1 - productData.discountPercentage / 100)).toFixed(2)}€</div>
-            <div className="stat-value text-black" style={{ color: 'red', fontWeight: 'bold' }}>{productData.price}€</div>
-            <div className="stat-desc" style={{ color: 'red' }}>{productData.discountPercentage.toFixed(0)}% sparen</div>
-            <div className="stat-desc" style={{ color: 'black' }}>inkl. 19% MwSt.</div>
+        <p className="product_description">{productData.description}</p>
+        <div className="price_available">
+          <div>
+            <div className="stat-title" id="product_oldprice">{(productData.price / (1 - productData.discountPercentage / 100)).toFixed(2)}€</div>
+            <div className="stat-value text-black" id="product_price">{productData.price}€</div>
+            <div className="stat-desc" id="rabatt_desc">{productData.discountPercentage.toFixed(0)}% sparen</div>
+            <div className="stat-desc" id="mws_desc">inkl. 19% MwSt.</div>
           </div>
-          <div className="availability-text" style={{ paddingLeft: '2rem', paddingTop: '2rem' }}>{getAvailabilityText(productData.stock)}</div>
+          <div className="availability-text">{getAvailabilityText(productData.stock)}</div>
         </div>
-        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="custom-button" onClick={() => setIsModalOpen(true)}>to shopping cart</button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="custom-button" onClick={() => setIsModalOpen(true)}>
+          <div className="custom_text">
+            <img src="\assets\shopping_bag.svg" id="shoppingbag_icon "alt="Shopping Bag Icon"/>
+            Buy
+          </div>
+        </button>
         <ShoppingcartModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
-        <div className="acc" style={{marginRight: '2rem'}}>
-        <h1 style={{marginTop: '6rem'}}>Frequently Asked Questions</h1>
-        <Accordion type="single" collapsible style={{ color: 'gray'}}>
-        <AccordionItem value="item-1">
-  <AccordionTrigger className="text-sm">Payment methods</AccordionTrigger>
-  <AccordionContent style={{color: 'black'}}>
-  We accept common payment methods such as credit cards (Visa, MasterCard, American Express), 
-  debit cards and PayPal to make your purchase as convenient as possible.
-  </AccordionContent>
-</AccordionItem>
-<AccordionItem value="item-2">
-  <AccordionTrigger className="text-sm">Customer support</AccordionTrigger>
-  <AccordionContent style={{color: 'black'}}>
-  Our dedicated customer service team is always ready to answer your questions and concerns. 
-  You can email us at <b>support@protec.com </b>
-  We are available Monday to Friday from 9am to 5pm.
-  </AccordionContent>
-</AccordionItem>
-<AccordionItem value="item-3">
-  <AccordionTrigger className="text-sm">Shipping information</AccordionTrigger>
-  <AccordionContent style={{color: 'black'}}>
-  The shipping information for our products can be found in the shopping cart during the ordering process. 
-  Delivery time varies by destination.
-  </AccordionContent>
-</AccordionItem>
-
-
-</Accordion>
-
-
-        </div>
-        
-       
+        <div className="similar-products" id="scrollview">
+  <h2>Similar Products</h2>
+  <div className="product-list">
+    {similarProducts.map((similarProduct) => (
+      <div key={similarProduct.id}>
+        <Product product={similarProduct} />
       </div>
-      
-
-
+    ))}
+  </div>
+</div>
+      </div>
     </div>
   );
+}
+
+function fetchSimilarProducts(category) {
+  return fetch(`https://dummyjson.com/products/category/${category}`)
+    .then((response) => response.json())
+    .then((data) => data.products);
 }
 
 export default ProductDetails;
