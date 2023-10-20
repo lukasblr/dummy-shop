@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import Box from '@mui/joy/Box';
 import Alert from '@mui/joy/Alert';
 
@@ -47,10 +47,10 @@ function Navbar({ onSearch }) {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 flex items-center" id="navbar">
-        <img src="/assets/logo_new.svg" id="navbar_icon" alt="Nexus Icon"/>
-        <span className="self-center text-3xl font-semibold whitespace-nowrap text-black dark:text-black" 
-          id="navbar_icontext" >exus
-        </span>
+      <Link to={"/"} className="flex items-center mb-4 sm:mb-0">
+        <img src="/assets/logo.png" id="navbar_icon" alt="Nexus Icon"/>
+      </Link>
+        
       </div>
 
       

@@ -89,7 +89,7 @@ function ProductDetails() {
           </div>
         </div>
       </div>
-      <div className="product-details w-1/2 p-4">
+      <div className="product-details w-full p-4">
         <p className="product_brand">{productData.brand}</p>
         <p className="product_title">{productData.title}</p>
         <p className="product_category">{productData.category}</p>
@@ -116,11 +116,12 @@ function ProductDetails() {
           <div className="availability-text">{getAvailabilityText(productData.stock)}</div>
         </div>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="custom-button" onClick={() => setIsModalOpen(true)}>
-          <div className="custom_text">
-            <img src="\assets\shopping_bag.svg" id="shoppingbag_icon "alt="Shopping Bag Icon"/>
-            Buy
-          </div>
-        </button>
+  <div className="custom_text">
+    <img src="\assets\shopping_bag.svg" id="shoppingbag_icon" alt="Shopping Bag Icon"/>
+    Buy
+  </div>
+</button>
+
         <ShoppingcartModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
         <div className="similar-products" id="scrollview">
   <h2>Similar Products</h2>

@@ -1,32 +1,26 @@
 .footer-container {
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
+  font-family: DIN PRO;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
 }
 
 #footer_logo {
-  width: 42px; 
-  height: 38px; 
+  width: 100px; 
+  height: 35px; 
   margin-right: 2px; 
-}
-
-#footer_logotext {
-  font-family: 'DIN PRO'; 
-  font-weight: bold;
 }
 
 @media (min-width: 769px) {
   #footer_logo {
-    width: 64px; 
-    height: 58px; 
+    width: 140px; 
+    height: 50px; 
   }
 
   #footer_logotext {
