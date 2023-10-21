@@ -20,7 +20,8 @@ React ist eine JavaScript-Bibliothek für die Entwicklung von Benutzeroberfläch
 
 Bootstrap
 
-Bootstrap ist ein Open-Source-Framework, das vorgefertigte CSS- und JavaScript-Komponenten bietet, um das Design und die Gestaltung deiner Webanwendung zu vereinfachen.
+Bootstrap ist ein Open-Source-Framework, das vorgefertigte CSS- und JavaScript-Komponenten bietet, um das Design und die Gestaltung von 
+Webanwendungen zu vereinfachen.
 
 Tailwind CSS
 
