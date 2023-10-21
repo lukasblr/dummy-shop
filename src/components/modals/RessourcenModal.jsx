@@ -43,9 +43,8 @@ export default function RessourceModal({ isOpen, closeModal }) {
         <br />
         Tailwind CSS
         <br />
-        Daisy UI
+       Logoipsum
         <br />
-        Flowbite
       </div>
       <button type="button" className="mt-4 inline-flex justify-center rounded-md border border-transparent bg-black 
       text-white px-1 py-1 text-sm font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
