@@ -16,11 +16,19 @@ blarr.lukas.a22@student.dhbw-karlsruhe.de
 
 React (JavaScript)
 
+React ist eine JavaScript-Bibliothek für die Entwicklung von Benutzeroberflächen, die es ermöglicht, dynamische und interaktive Webanwendungen zu erstellen.
+
 Bootstrap
+
+Bootstrap ist ein Open-Source-Framework, das vorgefertigte CSS- und JavaScript-Komponenten bietet, um das Design und die Gestaltung deiner Webanwendung zu vereinfachen.
 
 Tailwind CSS
 
-Flowbite
+Tailwind CSS ist ein CSS-Framework, das eine reichhaltige Sammlung von wiederverwendbaren Utility-Klassen bereitstellt, um das Erstellen von benutzerdefinierten und responsiven Benutzeroberflächen zu erleichtern.
+
+Logoipsum
+
+Logoipsum bietet vorgefertigte Placeholder-Logos für verschiedene Designs, welche in Mockups oder Prototypen verwendet werden können.
 
 ## Installation
 The following are the installation steps to get the project running properly.
