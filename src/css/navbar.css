@@ -27,7 +27,7 @@
   height: 40px; 
   width: 60%; 
   margin-left: auto;
-  border-radius: 10px; 
+  border-radius: 8px; 
 }
 
 @media (min-width: 769px) {
@@ -52,6 +52,6 @@
     height: 30px; 
     width: 70%; 
     margin-left: auto; 
-    border-radius: 10px; 
+    border-radius: 8px; 
   }
 }
