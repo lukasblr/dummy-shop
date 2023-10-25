@@ -20,9 +20,13 @@ function App() {
     setSearchQuery(query);
   };
 
+  const handleLogoClick = () => {
+    window.location.reload();
+  };
+
   return (
     <Router>
-      <Navbar onSearch={updateSearchQuery} />
+      <Navbar onSearch={updateSearchQuery} onLogoClick={handleLogoClick} />
       <Routes>
         <Route path="/" element={
           <div>
@@ -35,7 +39,6 @@ function App() {
       <Footer />
     </Router>
   );
-  
 }
 
 export default App;

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Box from '@mui/joy/Box';
-import Alert from '@mui/joy/Alert';
 
 function Navbar({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,7 +11,7 @@ function Navbar({ onSearch }) {
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
-    
+
     if (query.length >= 3) {
       setError(null);
     }
@@ -23,13 +21,8 @@ function Navbar({ onSearch }) {
     e.preventDefault();
 
     if (searchQuery.length < 3) {
-      setError(
-        <Box className="alert_box">
-          <Alert variant="soft" color="danger" size="md">
-            min. 3 Zeichen
-          </Alert>
-        </Box>
-      );
+      setError('min. 3 Zeichen');
+      setSearchQuery(''); // Löscht den Suchtext bei einem Fehler
       return;
     }
 
@@ -42,35 +35,32 @@ function Navbar({ onSearch }) {
     setSearchQuery('');
     onSearch('');
     navigate('/');
+    window.location.reload();
   };
 
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 flex items-center" id="navbar">
-      <Link to={"/"} className="flex items-center mb-4 sm:mb-0">
-        <img src="/assets/logo.png" id="navbar_icon" alt="Nexus Icon"/>
-      </Link>
-        
+        <Link to={"/"} className="flex items-center mb-4 sm:mb-0" onClick={handleHomeClick}>
+          <img src="/assets/final_logo.svg" id="navbar_icon" alt="Nexus Icon" />
+        </Link>
       </div>
 
-      
-      <div className="error_message">{error}</div>
-
       {!isProductPage && (
-        <form className="form-inline my-2 my-lg-0" onSubmit={handleSearchSubmit}>
-          <div className="input-group relative">
-            <input
-              className="input input-bordered w-24 md:w-auto pl-10 rounded-r-lg"
-              id="search_field"
-              type="text"
-              name="search"
-              placeholder="Suchen..."
-              aria-label="Search"
-              value={searchQuery}
-              onChange={handleSearchChange}
-            />
-          </div>
-        </form>
+      <form className="form-inline my-2 my-lg-0" onSubmit={handleSearchSubmit}>
+        <div className="input-group relative">
+          <input
+            className={`input input-bordered w-24 md:w-auto pl-10 rounded-r-lg ${error ? 'error-input' : ''}`}
+            id="search_field"
+            type="text"
+            name="search"
+            placeholder={error ? 'Enter at least 3 characters...' : 'Suchen...'}
+            aria-label="Search"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+        </div>
+      </form>
       )}
     </div>
   );

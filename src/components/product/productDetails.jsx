@@ -13,7 +13,6 @@ function ProductDetails() {
   const [similarProducts, setSimilarProducts] = useState([]);
 
   useEffect(() => {
-    // Lade Produktinformationen
     fetch(`https://dummyjson.com/products/${productId}`)
       .then((response) => response.json())
       .then((data) => setProductData(data))
@@ -23,10 +22,10 @@ function ProductDetails() {
   }, [productId]);
 
   useEffect(() => {
-    // Laden von ähnlichen Produkten derselben Kategorie
     if (productData) {
       fetchSimilarProducts(productData.category).then((data) => setSimilarProducts(data));
     }
+    setCurrentIndex(0);
   }, [productData]);
 
   if (!productData) {
@@ -116,25 +115,23 @@ function ProductDetails() {
           <div className="availability-text">{getAvailabilityText(productData.stock)}</div>
         </div>
         <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" id="custom-button" onClick={() => setIsModalOpen(true)}>
-  <div className="custom_text">
-    <img src="\assets\shopping_bag.svg" id="shoppingbag_icon" alt="Shopping Bag Icon"/>
-    Buy
-  </div>
-</button>
-
+          <div className="custom_text">
+            <img src="\assets\shopping_bag.svg" id="shoppingbag_icon" alt="Shopping Bag Icon"/>Buy
+          </div>
+        </button>
         <ShoppingcartModal isOpen={isModalOpen} closeModal={() => setIsModalOpen(false)} />
         <div className="similar-products" id="scrollview">
-  <h2>Similar Products</h2>
-  <div className="product-list">
-    {similarProducts.map((similarProduct) => (
-      <div key={similarProduct.id}>
-        <Product product={similarProduct} />
-      </div>
-    ))}
-  </div>
-</div>
+          <h2>Similar Products</h2>
+          <div className="product-list">
+            {similarProducts.map((similarProduct) => (
+              <div key={similarProduct.id}>
+                <Product product={similarProduct} />
+              </div>
+            ))}
+        </div>
       </div>
     </div>
+  </div>
   );
 }
 

@@ -5,15 +5,8 @@
 
 #navbar_icon {
   width: 100px; 
-  height: 35px; 
+  height: 40px; 
   margin-right: 0.2rem; 
-}
-
-
-
-.error_message {
-  color: red;
-  margin: 5px; 
 }
 
 .search-container {
@@ -25,10 +18,17 @@
 #search_field {
   padding: 16px; 
   height: 40px; 
-  width: 60%; 
+  width: 80%; 
   margin-left: auto;
+  margin-top: -35px;
   border-radius: 8px; 
 }
+
+.error-input::placeholder {
+  font-size: 12px;
+  color: brown;
+}
+
 
 @media (min-width: 769px) {
   #navbar {
@@ -48,10 +48,11 @@
   }
 
   #search_field {
-    padding: 20px;
-    height: 30px; 
-    width: 70%; 
-    margin-left: auto; 
+    padding: 16px; 
+    height: 50px; 
+    width: 80%; 
+    margin-left: auto;
+    margin-top: -40px;
     border-radius: 8px; 
   }
 }

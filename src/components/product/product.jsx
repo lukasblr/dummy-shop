@@ -5,6 +5,11 @@ import { File } from "lucide-react";
 import { Button } from "../Button";
 
 class Product extends Component {
+  handleDetailsClick = () => {
+    window.scrollTo(0, 0);
+    
+  };
+
   render() {
     const { product } = this.props;
 
@@ -19,7 +24,7 @@ class Product extends Component {
           <p className="card-price">{product.price}€</p>
         </div>
         <div className="card-actions justify-end" id="detail_action">
-          <Link to={`/productdetails/${product.id}`} id='detail_button'>
+          <Link to={`/productdetails/${product.id}`} id='detail_button' onClick={this.handleDetailsClick}>
             <Button id="detail_buttontext">
               <File className="mr-2 h-6 w-6"/> 
                 Details

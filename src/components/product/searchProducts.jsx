@@ -20,12 +20,12 @@ class SearchProducts extends Component {
     let apiUrl = `https://dummyjson.com/products/search?q=${searchQuery}&limit=100`;
 
     fetch(apiUrl)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`Network response was not ok for searchQuery: ${searchQuery}`);
-    }
-    return response.json();
-  })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok for searchQuery: ${searchQuery}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         if (data.products.length === 0) {
           this.setState({
@@ -48,10 +48,15 @@ class SearchProducts extends Component {
       });
   }
 
+  handlePageChange = (pageNumber) => {
+    this.setState({ currentPage: pageNumber });
+    window.scrollTo(0, 0);
+  }
+
   componentDidUpdate(prevProps, prevState) {
     if (this.props.searchQuery !== prevProps.searchQuery) {
       this.fetchProductsData();
-      this.setState({ currentPage: 1 }); // Zurück zur ersten Seite bei Änderung der Suchanfrage
+      this.setState({ currentPage: 1 });
     }
   }
 
@@ -60,11 +65,9 @@ class SearchProducts extends Component {
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-  
-    // Count of search results
     const searchResultCount = products.length;
     const isAllProducts = searchResultCount === 100;
-  
+
     return (
       <div>
         <div className="search-result-message">
@@ -86,7 +89,7 @@ class SearchProducts extends Component {
               <button
                 className={`join-item btn custom-button ${index + 1 === currentPage ? 'btn-active' : ''}`}
                 key={index}
-                onClick={() => this.setState({ currentPage: index + 1 })}
+                onClick={() => this.handlePageChange(index + 1)}
               >
                 {index + 1}
               </button>
@@ -95,9 +98,6 @@ class SearchProducts extends Component {
         </div>
       </div>
     );
-    
-    
-    
   }
 }
 

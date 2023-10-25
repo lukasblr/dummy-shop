@@ -2,34 +2,34 @@
 
 This website was created as part of a portfolio exam in the lecture "Webprogramming" of the DHBW Karlsruhe.
 
-## Allgemeine Informationen
+## General information
 
 Lukas Blarr
 
-Dual Student Business Informatics (Software-Engineering)
+Dual Student Business Informatics (Software Engineering)
 
 DHBW Karlsruhe
 
 blarr.lukas.a22@student.dhbw-karlsruhe.de
 
-## Komponenten & Frameworks
+## Components & Frameworks
 
 React (JavaScript)
 
-React ist eine JavaScript-Bibliothek für die Entwicklung von Benutzeroberflächen, die es ermöglicht, dynamische und interaktive Webanwendungen zu erstellen.
+React is a JavaScript library for user interface development that allows you to create dynamic and interactive web applications.
 
 Bootstrap
 
-Bootstrap ist ein Open-Source-Framework, das vorgefertigte CSS- und JavaScript-Komponenten bietet, um das Design und die Gestaltung von 
-Webanwendungen zu vereinfachen.
+Bootstrap is an open source framework that provides pre-built CSS and JavaScript components to simplify the design and creation of 
+web applications.
 
 Tailwind CSS
 
-Tailwind CSS ist ein CSS-Framework, das eine reichhaltige Sammlung von wiederverwendbaren Utility-Klassen bereitstellt, um das Erstellen von benutzerdefinierten und responsiven Benutzeroberflächen zu erleichtern.
+Tailwind CSS is a CSS framework that provides a rich collection of reusable utility classes to facilitate the creation of custom and responsive user interfaces.
 
 Logoipsum
 
-Logoipsum bietet vorgefertigte Placeholder-Logos für verschiedene Designs, welche in Mockups oder Prototypen verwendet werden können.
+Logoipsum provides pre-built placeholder logos for various designs, which can be used in mockups or prototypes.
 
 ## Installation
 The following are the installation steps to get the project running properly.
