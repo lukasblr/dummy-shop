@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Product from './product';
-import Box from '@mui/joy/Box';
-import Alert from '@mui/joy/Alert';
 
 class SearchProducts extends Component {
   state = {
@@ -32,9 +30,7 @@ class SearchProducts extends Component {
             products: [],
             error: (
               <div id="noproducts_error">
-                <Box id="noproducts_errorbox">
-                  <Alert variant="soft" color="danger" size="md">No products found for "{searchQuery}"</Alert>
-                </Box>
+                <span>No products found for "{searchQuery}"</span>
               </div>
             ),
           });
