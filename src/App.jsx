@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 
 import Navbar from './components/navbar'; 
 import Footer from './components/footer';
@@ -16,17 +16,21 @@ import './css/modal.css';
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
+  useEffect(() => {
+    if (searchQuery) {
+      window.history.pushState({}, '', `/search/${searchQuery}`);
+    } else {
+      window.history.pushState({}, '', '/');
+    }
+  }, [searchQuery]);
+
   const updateSearchQuery = (query) => {
     setSearchQuery(query);
   };
 
-  const handleLogoClick = () => {
-    window.location.reload();
-  };
-
   return (
     <Router>
-      <Navbar onSearch={updateSearchQuery} onLogoClick={handleLogoClick} />
+      <Navbar onSearch={updateSearchQuery} />
       <Routes>
         <Route path="/" element={
           <div>
@@ -36,7 +40,7 @@ function App() {
         } />
         <Route path="/productdetails/:productId" element={<ProductDetails />} />
       </Routes>
-      <Footer />
+      <Footer  />
     </Router>
   );
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import ContactModal from './modals/ContactModal';
 import InfoModal from './modals/InfoModal';
 import RessourcenModal from './modals/RessourcenModal';
@@ -27,9 +26,8 @@ class Footer extends Component {
         <footer className="bg-base-100 shadow dark:bg-gray-900 m-0">
           <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div className="sm:flex sm:items-center sm:justify-between">
-              <Link to={"/"} className="flex items-center mb-4 sm:mb-0">
                 <img src="/assets/final_logo.svg" id="footer_logo" alt="Nexus Icon" />
-              </Link>
+             
               <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-black sm:mb-0 dark:text-white">
                 <li>
                   <a href="#" className="mr-4 hover:underline md:mr-6 text-black hover:text-blue-700" onClick={(e) => { e.preventDefault(); this.openModal('infoModalOpen'); }}>Info</a>

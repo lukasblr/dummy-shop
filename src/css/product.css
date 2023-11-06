@@ -106,7 +106,7 @@ body {
   }
   
   .product_card_container {
-    display: flex; /* Hinzufügen von display: flex */
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -114,11 +114,11 @@ body {
   }
 
   .card {
-    flex: 0 0 calc(100% - 20px); /* 20px ist der gewünschte Abstand zu beiden Seiten */
-    margin: 0 10px; /* Aufteilen des Abstands links und rechts (10px) */
-    padding: 1rem; /* Anpassung der Polsterung für mobile Geräte */
-    max-width: 300px; /* Anpassung der maximalen Breite */
-    height: auto; /* Ermöglicht die Anpassung der Höhe an den Inhalt */
+    flex: 0 0 calc(100% - 20px); 
+    margin: 0 10px; 
+    padding: 1rem; 
+    max-width: 300px; 
+    height: auto; 
   }
   
   .search-result-message {
@@ -251,13 +251,7 @@ body {
       padding: 1rem;
       width: 20rem;
       height: 28rem;
-      max-width: 341px;
-
-      
-        
-     
-       
-      
+      max-width: 341px;  
     }
   
     #gallery_container {
