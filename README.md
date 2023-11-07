@@ -42,6 +42,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+### `npm install`
+
+This command is used to install the dependencies (libraries and packages) required in your JavaScript application from the npm repository.
+When you run npm install, npm normally checks the package.json file in your project directory to identify and install the dependencies listed there.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
