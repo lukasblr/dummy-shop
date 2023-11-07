@@ -3,16 +3,17 @@ import Product from './product';
 
 class SearchProducts extends Component {
   state = {
-    products: [],
-    error: null,
-    currentPage: 1,
-    productsPerPage: 20,
+    products: [], // Zustand für Produktliste
+    error: null, // Fehlerzustand
+    currentPage: 1, // Aktuelle Seite für die Paginierung
+    productsPerPage: 20, // Produkte pro Seite
   };
 
   componentDidMount() {
-    this.fetchProductsData();
+    this.fetchProductsData(); // Daten beim Komponentenladen abrufen
   }
 
+  // Funktion zum Abrufen von Produktdaten basierend auf der Suchanfrage
   fetchProductsData() {
     const { searchQuery } = this.props;
     let apiUrl = `https://dummyjson.com/products/search?q=${searchQuery}&limit=100`;
@@ -27,7 +28,7 @@ class SearchProducts extends Component {
       .then((data) => {
         if (data.products.length === 0) {
           this.setState({
-            products: [],
+            products: [], // Setzen der leeren Produkliste, wenn keine Produkte gefunden wurden
             error: (
               <div id="noproducts_error">
                 <span>No products found for "{searchQuery}"</span>
@@ -35,7 +36,7 @@ class SearchProducts extends Component {
             ),
           });
         } else {
-          this.setState({ products: data.products, error: null });
+          this.setState({ products: data.products, error: null }); // Aktualisieren des Produklistenzustands
         }
       })
       .catch((error) => {
@@ -44,15 +45,16 @@ class SearchProducts extends Component {
       });
   }
 
+  // Funktion zum Verarbeiten des Seitenwechselns
   handlePageChange = (pageNumber) => {
-    this.setState({ currentPage: pageNumber });
-    window.scrollTo(0, 0);
+    this.setState({ currentPage: pageNumber }); // Aktualisieren der aktuellen Seite
+    window.scrollTo(0, 0); // Zum Seitenanfang scrollen
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.searchQuery !== prevProps.searchQuery) {
-      this.fetchProductsData();
-      this.setState({ currentPage: 1 });
+      this.fetchProductsData(); // Daten erneut abrufen, wenn sich die Suchanfrage ändert
+      this.setState({ currentPage: 1 }); // Zur ersten Seite zurückkehren
     }
   }
 
@@ -60,9 +62,9 @@ class SearchProducts extends Component {
     const { products, currentPage, productsPerPage } = this.state;
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+    const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct); // Aktuell angezeigte Produkte
     const searchResultCount = products.length;
-    const isAllProducts = searchResultCount === 100;
+    const isAllProducts = searchResultCount === 100; // Prüfen, ob alle Produkte angezeigt werden
 
     return (
       <div>
@@ -82,6 +84,7 @@ class SearchProducts extends Component {
         <div className="pagination">
           <div className="pagination-center">
             {Array.from({ length: Math.ceil(searchResultCount / productsPerPage) }, (_, index) => (
+              // Erzeugen von Seitenbuttons für die Paginierung
               <button
                 className={`join-item btn custom-button ${index + 1 === currentPage ? 'btn-active' : ''}`}
                 key={index}

@@ -1,23 +1,25 @@
+/* Stilanweisungen für den Titel im Modal */
 #modal_title {
-  font-weight: bold;
-  font-family: DIN PRO;
+  font-weight: bold; /* Fettgedruckter Text */
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
 }
 
-  .modal_text {
-    font-family: DIN PRO;
-  }
-  
-  #modal_button {
-    background-color: white !important;
-    color: black !important;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
-  
-  #modal_button:hover {
-    background-color: black !important;
-    color: white !important;
-  }
-  
+/* Stilanweisungen für den Text im Modal */
+.modal_text {
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
+}
+
+/* Stilanweisungen für den Modal-Button */
+#modal_button {
+  background-color: white !important; /* Hintergrundfarbe Weiß, !important für Priorität */
+  color: black !important; /* Textfarbe Schwarz, !important für Priorität */
+  transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang der Hintergrund- und Textfarbe */
+  font-weight: bold; /* Fettgedruckter Text */
+  margin-left: 4rem; /* Linker Abstand von 4rem */
+  margin-right: 4rem; /* Rechter Abstand von 4rem */
+}
+
+#modal_button:hover {
+  background-color: black !important; /* Hintergrundfarbe Schwarz bei Hover, !important für Priorität */
+  color: white !important; /* Textfarbe Weiß bei Hover, !important für Priorität */
+}

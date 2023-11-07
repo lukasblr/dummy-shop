@@ -36,17 +36,19 @@ export default function RessourceModal({ isOpen, closeModal }) {
                 <h2 className="text-xl font-medium text-gray-900 dark:text-white" id="modal_title">
                   Project-Ressources
                 </h2>
+                {/* Ressourcen-Liste */}
                 <div className="modal_text">
-        React (JavaScript)
-        <br />
-        Bootstrap
-        <br />
-        Tailwind CSS
-        <br />
-       Logoipsum
-        <br />
-      </div>
-      <button type="button" className="mt-4 inline-flex justify-center rounded-md border border-transparent bg-black 
+                  React (JavaScript)
+                  <br />
+                  Bootstrap
+                  <br />
+                  Tailwind CSS
+                  <br />
+                  Logoipsum
+                  <br />
+                </div>
+                {/* Schließen-Button */}
+                <button type="button" className="mt-4 inline-flex justify-center rounded-md border border-transparent bg-black 
       text-white px-1 py-1 text-sm font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
       focus-visible:ring-black-500 focus-visible:ring-offset-2" id="modal_button" onClick={closeModal}>Okay</button>
               </div>

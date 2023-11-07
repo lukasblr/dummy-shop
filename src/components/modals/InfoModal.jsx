@@ -36,24 +36,14 @@ export default function InfoModal({ isOpen, closeModal }) {
                 <h2 className="text-xl font-medium text-gray-900 dark:text-white" id="modal_title">
                   Info
                 </h2>
+                {/* Info-Text */}
                 <div className="modal_text">
-                This website was created as a portfolio exam as part of the lecture "Webprogramming" at DHBW Karlsruhe.
+                  This website was created as a portfolio exam as part of the lecture "Webprogramming" at DHBW Karlsruhe.
                 </div>
+                {/* Schließen-Button */}
                 <button type="button" className="mt-4 inline-flex justify-center rounded-md border border-transparent bg-black 
       text-white px-1 py-1 text-sm font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
       focus-visible:ring-black-500 focus-visible:ring-offset-2" id="modal_button" onClick={closeModal}>Okay</button>
-
-
-
-
-
-
-
-
-
-
-
-
               </div>
             </div>
           </div>

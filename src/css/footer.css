@@ -1,29 +1,32 @@
+/* Stilanweisungen für den Footer */
 .footer-container {
-  position: relative;
-  overflow: hidden;
-  font-family: DIN PRO;
+  position: relative; /* Relative Positionierung */
+  overflow: hidden; /* Bei Bedarf kann ein Überlauf ausgeblendet werden */
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
 }
 
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
+  display: flex; /* Flex-Layout für Footer-Inhalte */
+  justify-content: center; /* Zentrierte Ausrichtung horizontal */
+  align-items: center; /* Zentrierte Ausrichtung vertikal */
+  background-color: #fff; /* Hintergrundfarbe Weiß */
 }
 
 #footer_logo {
-  width: 100px; 
-  height: 35px; 
-  margin-right: 2px; 
+  width: 100px; /* Breite von 100px */
+  height: 35px; /* Höhe von 35px */
+  margin-right: 2px; /* Rechter Abstand von 2px */
 }
 
+/* Media Query für größere Bildschirme (769px und größer) */
 @media (min-width: 769px) {
+  
   #footer_logo {
-    width: 140px; 
-    height: 50px; 
+    width: 140px; /* Erhöhte Breite auf größeren Bildschirmen */
+    height: 50px; /* Erhöhte Höhe auf größeren Bildschirmen */
   }
 
   #footer_logotext {
-    font-size: 30px;
+    font-size: 30px; /* Größere Schriftgröße auf größeren Bildschirmen */
   }
 }

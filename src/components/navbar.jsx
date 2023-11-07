@@ -8,6 +8,7 @@ function Navbar({ onSearch }) {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Handler für Änderungen im Suchfeld
   const handleSearchChange = (e) => {
     const query = e.target.value;
     setSearchQuery(query);
@@ -17,6 +18,7 @@ function Navbar({ onSearch }) {
     }
   };
 
+  // Handler für die Suchanfrage
   const handleSearchSubmit = (e) => {
     e.preventDefault();
 
@@ -29,8 +31,10 @@ function Navbar({ onSearch }) {
     onSearch(searchQuery);
   };
 
+  // Überprüft, ob sich die Seite auf einer Produktseite befindet
   const isProductPage = location.pathname.includes('/productdetails');
 
+  // Handler für das Klicken auf das Startseiten-Logo
   const handleHomeClick = () => {
     setSearchQuery('');
     onSearch('');
@@ -41,6 +45,7 @@ function Navbar({ onSearch }) {
   return (
     <div className="navbar bg-base-100">
       <div className="flex-1 flex items-center" id="navbar">
+        {/* Link zum Startseiten-Logo */}
         <Link to={"/"} className="flex items-center mb-4 sm:mb-0" onClick={handleHomeClick}>
           <img src="/assets/final_logo.svg" id="navbar_icon" alt="Nexus Icon" />
         </Link>
@@ -49,6 +54,7 @@ function Navbar({ onSearch }) {
       {!isProductPage && (
       <form className="form-inline my-2 my-lg-0" onSubmit={handleSearchSubmit}>
         <div className="input-group relative">
+          {/* Sucheingabefeld */}
           <input
             className={`input input-bordered w-24 md:w-auto pl-10 rounded-r-lg ${error ? 'error-input' : ''}`}
             id="search_field"

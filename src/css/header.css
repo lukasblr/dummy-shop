@@ -1,44 +1,51 @@
+/* Stilanweisungen für den allgemeinen Header */
 .header {
-  margin-left: 1rem; 
-  margin-bottom: 0rem;
-  font-family: 'DIN PRO';
-  font-size: 2rem; 
+  margin-left: 1rem; /* Linker Abstand von 1rem */
+  margin-bottom: 0rem; /* Unterer Abstand von 0rem (kann auf 0 gesetzt werden) */
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
+  font-size: 2rem; /* Schriftgröße von 2rem */
 }
 
+/* Stilanweisungen für die Haupt-Überschrift */
 #main_header {
-  padding-bottom: 0.5rem; 
-  padding-left: 16px; 
-  font-family: 'DIN PRO';
-  font-size: 2rem; 
-  font-weight: bold;
-  margin-bottom: 0;
-  color: black;
+  padding-bottom: 0.5rem; /* Untere Polsterung von 0.5rem */
+  padding-left: 16px; /* Linke Polsterung von 16px */
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
+  font-size: 2rem; /* Schriftgröße von 2rem */
+  font-weight: bold; /* Fettgedruckter Text */
+  margin-bottom: 0; /* Unterer Abstand von 0 (kann auf 0 gesetzt werden) */
+  color: black; /* Textfarbe Schwarz */
 }
 
+/* Stilanweisungen für die Unter-Überschrift */
 #sub_header {
-  padding-bottom: 0.25rem; 
-  padding-left: 16px; 
-  font-family: 'DIN PRO';
-  font-size: 1rem; 
-  font-weight: normal;
-  color: gray;
+  padding-bottom: 0.25rem; /* Untere Polsterung von 0.25rem */
+  padding-left: 16px; /* Linke Polsterung von 16px */
+  font-family: 'DIN PRO', sans-serif; /* Verwendung der DIN PRO Schriftart */
+  font-size: 1rem; /* Schriftgröße von 1rem */
+  font-weight: normal; /* Normaler Text (kann weggelassen werden) */
+  color: gray; /* Textfarbe Grau */
 }
 
+/* Media Query für größere Bildschirme (769px und größer) */
 @media (min-width: 769px) {
+ 
   .header {
-    margin-left: 2rem; 
-    font-size: 4rem; 
+    margin-left: 2rem; /* Erhöhter linker Abstand auf größeren Bildschirmen */
+    font-size: 4rem; /* Größere Schriftgröße auf größeren Bildschirmen */
   }
 
+  
   #main_header {
-    padding-bottom: 1rem; 
-    padding-left: 32px; 
-    font-size: 4rem; 
+    padding-bottom: 1rem; /* Erhöhte untere Polsterung auf größeren Bildschirmen */
+    padding-left: 32px; /* Erhöhte linke Polsterung auf größeren Bildschirmen */
+    font-size: 4rem; /* Größere Schriftgröße auf größeren Bildschirmen */
   }
 
+  
   #sub_header {
-    padding-bottom: 0.5rem; 
-    padding-left: 32px; 
-    font-size: 1.5rem; 
+    padding-bottom: 0.5rem; /* Erhöhte untere Polsterung auf größeren Bildschirmen */
+    padding-left: 32px; /* Erhöhte linke Polsterung auf größeren Bildschirmen */
+    font-size: 1.5rem; /* Größere Schriftgröße auf größeren Bildschirmen */
   }
 }

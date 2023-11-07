@@ -6,16 +6,18 @@ import FaqModal from './modals/FaqModal';
 
 class Footer extends Component {
   state = {
-    infoModalOpen: false,
-    ressourcenModalOpen: false,
-    contactModalOpen: false,
-    faqModalOpen: false,
+    infoModalOpen: false, // Zustand für das Info-Modal
+    ressourcenModalOpen: false, // Zustand für das Ressourcen-Modal
+    contactModalOpen: false, // Zustand für das Kontakt-Modal
+    faqModalOpen: false, // Zustand für das FAQ-Modal
   };
 
+  // Öffnet ein bestimmtes Modal
   openModal = (modalName) => {
     this.setState({ [modalName]: true });
   };
 
+  // Schließt ein bestimmtes Modal
   closeModal = (modalName) => {
     this.setState({ [modalName]: false });
   };
@@ -23,7 +25,7 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer-container">
-        <footer className="bg-base-100 shadow dark:bg-gray-900 m-0">
+        <footer className="bg-base-100 shadow m-0">
           <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div className="sm:flex sm:items-center sm:justify-between">
                 <img src="/assets/final_logo.svg" id="footer_logo" alt="Nexus Icon" />

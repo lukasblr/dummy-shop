@@ -1,297 +1,334 @@
+/* Allgemeine Stilanweisungen für den gesamten Körper (body) */
 body {
-    font-family: 'DIN Pro', sans-serif;
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  h1, h2, h3, p {
-    font-family: 'DIN Pro', sans-serif;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-title {
-    font-size: 2rem;
-    margin-top: -1rem;
-    margin-bottom: 5rem;
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  .card-manufacturer {
-    font-size: 1rem;
-    text-align: 'left';
-  }
-  
-  .card-price {
-    font-size: 1.5rem;
-    text-align: left;
-  }
-  
-  .circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 5px;
-  }
-  
-  .green {
-    background-color: rgb(74, 207, 74);
-  }
-  
-  .red {
-    background-color: red;
-  }
-  
-  #custom-button {
-    background-color: rgb(74, 207, 74);
-    color: white;
-    margin-top: 1rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    min-width: 150px;
-    height: auto;
-    display: flex;
-    align-items: center;
-  }
-  
-  .custom_text {
-    display: flex;
-    align-items: center;
-  }
-  
-  #shoppingbag_icon {
-    margin-right: 8px;
-  }
-  
-  #detail_action {
-    margin-bottom: 15px;
-  }
-  
-  #detail_button {
-    display: flex;
-    align-items: center;
-    color: white;
-    height: 40px;
-  }
-  
-  #detail_buttontext {
-    font-size: 16px;
-  }
-  
-  .loading {
-    text-align: center;
-  }
-  
-  #gallery_container {
-    width: 100%;
-    height: auto;
-    padding-left: 0;
-  }
-  
-  #gallery {
-    width: 100%;
-    height: auto;
-  }
-  
-  .product-details-container {
-    display: flow-root;
-    font-family: 'DIN Pro', sans-serif;
-  }
-  
+  font-family: 'DIN Pro', sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Stilanweisungen für Überschriften und Absätze */
+h1, h2, h3, p {
+  font-family: 'DIN Pro', sans-serif;
+}
+
+/* Stilanweisungen für Karten beim Hover-Zustand */
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stilanweisungen für den Karten-Titel */
+.card-title {
+  font-size: 2rem;
+  margin-top: -1rem;
+  margin-bottom: 5rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Stilanweisungen für den Hersteller in der Karte */
+.card-manufacturer {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Stilanweisungen für den Preis in der Karte */
+.card-price {
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+/* Stilanweisungen für den "Auf Lager" - Kreis */
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Stilanweisungen für grünen Kreis */
+.green {
+  background-color: rgb(74, 207, 74);
+}
+
+/* Stilanweisungen für roten Kreis */
+.red {
+  background-color: red;
+}
+
+/* Stilanweisungen für den "Buy" - Button */
+#custom-button {
+  background-color: rgb(74, 207, 74);
+  color: white;
+  margin-top: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  min-width: 150px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Stilanweisungen für benutzerdefinierten Text im Button */
+.custom_text {
+  display: flex;
+  align-items: center;
+}
+
+/* Stilanweisungen für das Einkaufstaschen-Symbol */
+#shoppingbag_icon {
+  margin-right: 8px;
+}
+
+/* Stilanweisungen für den Abstand der Similar Products zum Button */
+#detail_action {
+  margin-bottom: 15px;
+}
+
+/* Stilanweisungen für den Detail-Button */
+#detail_button {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: 40px;
+}
+
+/* Stilanweisungen für den Text im Detail-Button */
+#detail_buttontext {
+  font-size: 16px;
+}
+
+/* Stilanweisungen für den Ladezustand */
+.loading {
+  text-align: center;
+}
+
+/* Stilanweisungen für den Galeriecontainer */
+#gallery_container {
+  width: 100%;
+  height: auto;
+  padding-left: 0;
+}
+
+/* Stilanweisungen für die Galeriebilder */
+#gallery {
+  width: 100%;
+  height: auto;
+}
+
+/* Stilanweisungen für den Produkt-Detailcontainer */
+.product-details-container {
+  display: flow-root;
+  font-family: 'DIN Pro', sans-serif;
+}
+
+/* Stilanweisungen für den Produktkartencontainer */
+.product_card_container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+/* Stilanweisungen für die Produktkarten (cards) */
+.card {
+  flex: 0 0 calc(100% - 20px); 
+  margin: 0 10px; 
+  padding: 1rem; 
+  max-width: 300px; 
+  height: auto; 
+}
+
+/* Stilanweisungen für die Suchergebnismeldung */
+.search-result-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  font-family: DIN PRO;
+}
+
+.rounded-frame {
+  background: #FFFFFF;
+  border-radius: 10px;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Stilanweisungen für die Ergebnisanzahl */
+.result-count {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Stilanweisungen für den Produkt-Titel */
+.product_title {
+  font-size: 32pt;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Stilanweisungen für die Produkt-Marke */
+.product_brand {
+  margin-bottom: 0;
+}
+
+/* Stilanweisungen für die Produkt-Kategorie */
+.product_category {
+  margin: 0;
+}
+
+/* Stilanweisungen für die Sterne-Bewertung */
+.rating {
+  display: flex;
+}
+
+#rating_text {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Stilanweisungen für die Produktbeschreibung */
+.product_description {
+  margin-bottom: 1rem;
+}
+
+/* Stilanweisungen für die Verfügbarkeit */
+.price_available {
+  display: flex;
+}
+
+/* Stilanweisungen für den alten Preis */
+#product_oldprice {
+  text-decoration: line-through;
+  color: black;
+}
+
+/* Stilanweisungen für den aktuellen Preis */
+#product_price {
+  font-weight: bold;
+}
+
+/* Stilanweisungen für Rabatt */
+#rabatt_desc {
+  color: red;
+}
+
+/* Stilanweisungen für Mehrwertsteuer */
+#mws_desc {
+  color: black;
+}
+
+/* Stilanweisungen für Text zur Verfügbarkeit */
+.availability-text {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
+
+/* Stilanweisungen für den Scrollbereich */
+#scrollview {
+  padding-top: 3rem;
+  flex: 0 0 100%;
+  margin-bottom: 2rem;
+}
+
+/* Stilanweisungen für die Produktliste */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-top: 1rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* Stilanweisungen für die Karten */
+.card {
+  flex: 0 0 calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+/* Stilanweisungen für die Seitennummerierung */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-center {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Media Query für größere Bildschirme (769px und größer) */
+@media (min-width: 769px) {
   .product_card_container {
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 16px;
+  }
+
+  .product-details-container {
+    display: flex;
+    font-family: 'DIN Pro', sans-serif;
   }
 
   .card {
-    flex: 0 0 calc(100% - 20px); 
-    margin: 0 10px; 
-    padding: 1rem; 
-    max-width: 300px; 
-    height: auto; 
+    margin: 0 10px;
+    padding: 1rem;
+    width: 20rem;
+    height: 28rem;
+    max-width: 341px;
   }
-  
+
+  #gallery_container {
+    width: 800px;
+    height: 800px;
+    padding-left: 5rem;
+  }
+
+  #gallery {
+    width: 600px;
+    height: 600px;
+  }
+
+  #scrollview {
+    overflow-x: auto;
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-top: 1rem;
+  }
+
+  .card-img-top {
+    height: 250px;
+    object-fit: scale-down;
+  }
+
   .search-result-message {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
     margin-bottom: 1rem;
-    padding-left: 1rem;
+    padding-left: 3rem;
     font-family: DIN PRO;
   }
-  
-  .rounded-frame {
-    background: #FFFFFF;
-    border-radius: 10px;
-    padding-left: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .result-count {
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  
-  .product_title {
-    font-size: 32pt;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .product_brand {
-    margin-bottom: 0;
-  }
-  
-  .product_category {
-    margin: 0;
-  }
-  
-  .rating {
-    display: flex;
-  }
-  
-  #rating_text {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .product_description {
-    margin-bottom: 1rem;
-  }
-  
-  .price_available {
-    display: flex;
-  }
-  
-  #product_oldprice {
-    text-decoration: line-through;
-    color: black;
-  }
-  
-  #product_price {
-    font-weight: bold;
-  }
-  
-  #rabatt_desc {
-    color: red;
-  }
-  
-  #mws_desc {
-    color: black;
-  }
-  
-  .availability-text {
-    padding-left: 2rem;
-    padding-top: 2rem;
-  }
-  
-  #scrollview {
-    padding-top: 3rem;
-    flex: 0 0 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .product-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    padding-top: 1rem;
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  
-  .card {
-    flex: 0 0 calc(100% - 20px);
-    margin-bottom: 10px;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .pagination-center {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  @media (min-width: 769px) {
-    .product_card_container {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: left;
-      padding-left: 16px;
-      padding-right: 16px;
-      gap: 16px;
-    }
-  
-    .product-details-container {
-      display: flex;
-      font-family: 'DIN Pro', sans-serif;
-    }
-  
-    .card {
-      flex: 0 0 calc(20% - 20px);
-      margin: 0 10px; 
-      padding: 1rem;
-      width: 20rem;
-      height: 28rem;
-      max-width: 341px;  
-    }
-  
-    #gallery_container {
-      width: 800px;
-      height: 800px;
-      padding-left: 5rem;
-    }
-  
-    #gallery {
-      width: 600px;
-      height: 600px;
-    }
-  
-    #scrollview {
-      overflow-x: auto;
-      width: 100%;
-      padding-top: 2rem;
-    }
-  
-    .product-list {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 10px;
-      padding-top: 1rem;
-    }
-  
-    .card-img-top {
-      height: 250px;
-      object-fit: scale-down;
-    }
-  
-    .search-result-message {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      margin-bottom: 1rem;
-      padding-left: 3rem;
-      font-family: DIN PRO;
-    }
-  }
-  
+}

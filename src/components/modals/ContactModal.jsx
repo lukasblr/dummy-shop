@@ -36,18 +36,20 @@ export default function ContactModal({ isOpen, closeModal }) {
                 <h2 className="text-xl font-medium text-gray-900 dark:text-white" id="modal_title">
                   Contact
                 </h2>
-                 <div className="modal_text">
-                    Lukas Blarr<br />
-                    Dual Student Business Informatics <br />
-                    DHBW Karlsruhe<br />
-                    <a href="mailto:blarr.lukas.a22@student.dhbw-karlsruhe.de">blarr.lukas.a22@student.dhbw-karlsruhe.de</a>
-                  </div>
-                  <button type="button" className="mt-4 inline-flex justify-center 
-                    rounded-md border border-transparent bg-black text-white px-1 py-1 text-sm 
-                    font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
-                    focus-visible:ring-black-500 focus-visible:ring-offset-2" id="modal_button" 
-                    onClick={closeModal}>Okay
-                  </button>
+                {/* Kontaktinformationen */}
+                <div className="modal_text">
+                  Lukas Blarr<br />
+                  Dual Student Business Informatics <br />
+                  DHBW Karlsruhe<br />
+                  <a href="mailto:blarr.lukas.a22@student.dhbw-karlsruhe.de">blarr.lukas.a22@student.dhbw-karlsruhe.de</a>
+                </div>
+                {/* Schließen-Button */}
+                <button type="button" className="mt-4 inline-flex justify-center 
+                  rounded-md border border-transparent bg-black text-white px-1 py-1 text-sm 
+                  font-medium hover:bg-black hover:text-white focus:outline-none focus-visible:ring-2 
+                  focus-visible:ring-black-500 focus-visible:ring-offset-2" id="modal_button" 
+                  onClick={closeModal}>Okay
+                </button>
               </div>
             </div>
           </div>

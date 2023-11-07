@@ -18,14 +18,14 @@ function App() {
 
   useEffect(() => {
     if (searchQuery) {
-      window.history.pushState({}, '', `/search/${searchQuery}`);
+      window.history.pushState({}, '', `/search/${searchQuery}`); // Aktualisieren der URL basierend auf der Suchanfrage
     } else {
-      window.history.pushState({}, '', '/');
+      window.history.pushState({}, '', '/'); // Zurücksetzen der URL, wenn keine Suchanfrage vorhanden ist
     }
   }, [searchQuery]);
 
   const updateSearchQuery = (query) => {
-    setSearchQuery(query);
+    setSearchQuery(query); // Funktion zum Aktualisieren der Suchanfrage
   };
 
   return (
